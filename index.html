@@ -1,2 +1,194 @@
-<h1>Três Pontos</h1><br/>
-<h2>Cervejaria</h2>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Cervejaria Três Pontos</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/calculadora.css"/>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <img src="images/logomarca_white.svg" alt="Logo Três Pontos"/><!-- Ou coloca sua logo aqui depois -->
+        </div>
+        <div class="content">
+            <div class="inner">
+                <h1>Três Pontos</h1>
+                <p>Cerveja artesanal que celebra cada vitória!</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Sobre Nós -->
+        <article id="sobre">
+            <h2 class="major">Nossa História</h2>
+            <p>A Três Pontos nasceu em Trindade-GO da união de quatro amigos apaixonados por futebol e cerveja artesanal. Movidos pelo desejo de criar algo verdadeiramente
+                especial, decidimos unir tradição, amizade e qualidade em cada receita que produzimos.</p>
+
+            <p>Utilizamos apenas ingredientes selecionados, água pura e métodos de produção que respeitam o tempo e a essência de cada estilo. Cada cerveja é pensada para oferecer
+                uma experiência única: do primeiro aroma ao último gole, buscamos surpreender quem valoriza sabor, autenticidade e paixão em cada detalhe.</p>
+
+            <p>O nome "Três Pontos" carrega um significado profundo: no futebol, representa a vitória suada e comemorada. Na geometria, o triângulo simboliza a força, o equilíbrio
+                e a continuidade. Em nossa história, representa também a Trindade, raízes fortes da nossa cidade natal. Mais do que cerveja, Três Pontos é celebração, conquista e
+                conexão.</p>
+        </article>
+
+        <!-- Produtos -->
+        <article id="produtos">
+            <h2 class="major">Nossa Escalação</h2>
+            <span class="image main"><img src="images/produtos.png" alt="Nossos Produtos"/></span>
+            <p><strong>Fora de Casa (Pilsen):</strong> Leve e refrescante para vitórias inesquecíveis.<br/>
+                <strong>Gol de Placa (IPA):</strong> Intensa, como jogadas brilhantes.<br/>
+                <strong>Escanteio (Weiss):</strong> Frutada e vibrante para mudar o jogo!<br/>
+                <strong>Virada Histórica (Dunkel):</strong> Complexa e cheia de surpresas.<br/>
+                <strong>Clássico (Lager):</strong> Robusta e tradicional.<br/>
+            </p>
+        </article>
+
+        <!-- Calculadora -->
+        <article id="calculadora">
+            <h2 class="major">Calcule seu Chopp</h2>
+            <form id="beer-form">
+                <div id="progress-bar">
+                    <div id="progress"></div>
+                </div>
+
+                <!-- Etapa 1 -->
+                <div class="form-step" id="step-1">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="guests">Quantos convidados?</label>
+                            <input type="text" id="guests" name="guests" min="1"  value="10" required>
+                        </div>
+                        <div class="field">
+                            <label>Como é o estilo da turma?</label>
+                            <select id="consumo">
+                                <option value="0.4">🧘‍♂️ Leves, só pra socializar</option>
+                                <option value="0.8" selected>🎉 Gostam de uma gelada</option>
+                                <option value="1">🔥 Vão virar a noite no copo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li>
+                            <button type="button" onclick="nextStep(1)" class="button primary">Próxima etapa</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Etapa 2 -->
+                <div class="form-step hidden" id="step-2">
+                    <div class="fields">
+                        <div class="field">
+                            <label>Horário da festa:</label>
+                            <select id="periodo">
+                                <option value="dia">☀️ Durante o dia</option>
+                                <option value="noite">🌙 Durante a noite</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="duracao">Duração (horas):</label>
+                            <input type="text" id="duracao" name="duracao" min="1" value="4">
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li>
+                            <button type="button" onclick="nextStep(2)" class="button primary">Próxima etapa</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Etapa 3 -->
+                <div class="form-step hidden" id="step-3">
+                    <div class="fields">
+                        <div class="field">
+                            <label>Como vai estar o clima?</label>
+                            <select id="clima">
+                                <option value="1.1">🔥 Calorão</option>
+                                <option value="1">🌡️ Clima ameno</option>
+                                <option value="0.9">❄️ Friozinho</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Vai ter outras bebidas alcoólicas?</label>
+                            <select id="outras-bebidas">
+                                <option value="0.8">🍸 Sim, várias</option>
+                                <option value="0.9">🥃 Só alguns drinks</option>
+                                <option value="1" selected>🍻 Só cerveja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li>
+                            <button type="button" onclick="calcularCerveja()" class="button primary">Ver Resultado</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resultado -->
+                <div class="form-step hidden" id="step-4">
+                    <div id="resultado" class="box"></div>
+                    <ul class="actions">
+                        <li>
+                            <button type="button" onclick="resetForm()" class="button">Calcular novamente</button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </article>
+
+
+        <!-- Contato -->
+        <article id="contato">
+            <h2 class="major">Fale Conosco</h2>
+            <p>Entre em contato para fazer pedidos ou tirar dúvidas!</p>
+            <ul class="icons">
+                <li><a href="https://wa.me/+556296054989" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+                <li><a href="https://instagram.com/cervejariatrespontos" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            </ul>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p class="copyright">
+            &copy; 2025 Três Pontos- Cervejaria.
+        </p>
+    </footer>
+
+</div>
+
+<!-- Background -->
+<div id="bg"></div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/calculadora.js"></script>
+
+</body>
+</html>

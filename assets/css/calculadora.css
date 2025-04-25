@@ -1,0 +1,53 @@
+.form-step {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.form-step > .fields {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    margin: -1.5em 0 2rem 0;
+}
+
+.form-step > .fields > .field {
+    margin-top: 1.5em;
+}
+
+.form-step.hidden {
+    display: none;
+}
+
+#resultado {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+}
+
+select, input {
+    color: #fff;
+}
+
+#progress-bar {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    height: 8px;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+#progress {
+    height: 8px;
+    background-color: #7C9F60; /* Verde Três Pontos */
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 5px;
+}
